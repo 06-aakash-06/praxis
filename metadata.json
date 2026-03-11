@@ -1,0 +1,5 @@
+{
+  "name": "Project Praxis",
+  "description": "A high-fidelity mobile web application for managing student schedules, attendance, and academic events. It features a dashboard timeline, a comprehensive schedule planner, and insightful analytics.",
+  "requestFramePermissions": []
+}
