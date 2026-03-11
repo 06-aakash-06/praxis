@@ -127,15 +127,24 @@ const Login: React.FC = () => {
                   <div className="flex-grow bg-border h-px"></div>
               </div>
 
-              <motion.button 
-                  whileTap={{ scale: 0.98 }}
-                  onClick={handleGoogleLogin}
-                  disabled={loading}
-                  className="w-full flex items-center justify-center gap-3 bg-white hover:bg-zinc-200 text-black font-bold py-4 rounded-xl transition-all shadow-lg shadow-white/10 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
-              >
-                  <svg className="w-6 h-6" viewBox="0 0 48 48"><path fill="#4285F4" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path></svg>
-                  Sign in with Google
-              </motion.button>
+              <div className="relative w-full group">
+                <motion.button 
+                    whileTap={{ scale: 0.98 }}
+                    onClick={handleGoogleLogin}
+                    disabled={true}
+                    className="w-full flex items-center justify-center gap-3 bg-zinc-800 text-zinc-400 font-bold py-4 rounded-xl transition-all shadow-lg active:scale-[0.98] opacity-70 cursor-not-allowed border border-zinc-700"
+                >
+                    <svg className="w-6 h-6 grayscale opacity-50" viewBox="0 0 48 48"><path fill="#4285F4" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path></svg>
+                    Sign in with Google
+                </motion.button>
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden rounded-xl">
+                  <div className="bg-zinc-900/80 absolute inset-0 backdrop-blur-[1px]"></div>
+                  <div className="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase z-10 shadow-lg flex items-center gap-1">
+                    <span className="material-symbols-outlined text-[14px]">construction</span>
+                    In Development
+                  </div>
+                </div>
+              </div>
               
               <p className="text-sm text-zinc-400 mt-8">
                 {isSignUp ? 'Already have an account?' : "Don't have an account?"}
